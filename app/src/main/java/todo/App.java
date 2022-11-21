@@ -3,12 +3,31 @@
  */
 package todo;
 
+import controller.TaskController;
+import controller.ProjectController;
+import model.Task;
+import java.util.Date;
+import model.Project;
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        //Connection c = ConnectionFactory.getConnection();
+        java.util.Date date = new Date();
+        Project p = new Project(1,"summer","Breeze", date, date);
+        Task t = new Task(0,1,"xablau","xebleu",false,"xibliu", date,date,date);
+        TaskController ta = new TaskController();
+        ta.save(t);
+        t.setName("Vulfpeck");
+        t.setDescription("Puririmabek");
+        t.setId(3);
+        ta.update(t);
+        ta.removeById(4);
+        ProjectController pr = new ProjectController();
+        pr.save(p);
+        p.setName("Animal Spirits");
+        pr.update(p);
+        
+             
+        //ConnectionFactory.closeConnection(c);
     }
 }

@@ -15,7 +15,7 @@ Organize tasks needed in one or more projects.
 - Task
     - Name
     - Description
-    - Status
+    - Complete flag
     - Notes
     - Due date
     - Created on
@@ -23,7 +23,7 @@ Organize tasks needed in one or more projects.
 
 ## Requirements
 - Create, edit and delete projects
-- Create, edit and delete tasks related to a project
+- Create, edit and delete tasks 
 
 ## Business rules
 - A task must must belong to a single project

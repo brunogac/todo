@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS projects (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     description VARCHAR(255),
-    createdAt DATETIME NOT NULL,
+    createdOn DATETIME NOT NULL,
     lastUpdate DATETIME NOT NULL, 
     PRIMARY KEY (id)
     );
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     complete BOOLEAN NOT NULL,  
     notes VARCHAR(255),
     dueDate DATE,
-    createdAt DATETIME NOT NULL,
+    createdOn DATETIME NOT NULL,
     lastUpdate DATETIME NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (idProject) 
