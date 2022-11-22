@@ -30,6 +30,17 @@ public class Task {
         this.CreatedOn = CreatedOn;
         this.lastUpdate = lastUpdate;
     }
+    public Task(int idProject, String name, String description, boolean isComplete, String notes, Date dueDate) {
+        this.id = 1;
+        this.idProject = idProject;
+        this.name = name;
+        this.description = description;
+        this.isComplete = isComplete;
+        this.notes = notes;
+        this.dueDate = dueDate;
+        this.CreatedOn = new Date();
+        this.lastUpdate = new Date();
+    }
 
     public int getId() {
         return id;

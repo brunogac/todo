@@ -22,6 +22,13 @@ public class Project {
         this.createdOn = createdOn;
         this.lastUpdate = lastUpdate;
     }
+        public Project(String name, String description) {
+        this.id = 0;
+        this.name = name;
+        this.description = description;
+        this.createdOn = new Date();
+        this.lastUpdate = new Date();
+    }
 
     public void setId(int id) {
         this.id = id;
