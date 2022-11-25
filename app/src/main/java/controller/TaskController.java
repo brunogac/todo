@@ -37,7 +37,7 @@ public class TaskController {
             statement.setInt(1, task.getIdProject());
             statement.setString(2, task.getName());
             statement.setString(3, task.getDescription());
-            statement.setBoolean(4, task.isIsComplete());
+            statement.setBoolean(4, task.getIsComplete());
             statement.setString(5, task.getNotes());
             statement.setDate(6, new Date(task.getDueDate().getTime()));
             statement.setDate(7, new Date(task.getCreatedOn().getTime()));
@@ -70,7 +70,7 @@ public class TaskController {
             statement.setInt(1, task.getIdProject());
             statement.setString(2, task.getName());
             statement.setString(3, task.getDescription());
-            statement.setBoolean(4, task.isIsComplete());
+            statement.setBoolean(4, task.getIsComplete());
             statement.setString(5, task.getNotes());
             statement.setDate(6, new Date(task.getDueDate().getTime()));
             statement.setDate(7, new Date(task.getCreatedOn().getTime()));
@@ -119,7 +119,7 @@ public class TaskController {
                         res.getInt("idProject"),
                         res.getString("name"),
                         res.getString("description"),
-                        res.getBoolean("isComplete"),
+                        res.getBoolean("complete"),
                         res.getString("notes"),
                         new java.util.Date(res.getDate("dueDate").getTime()),
                         new java.util.Date(res.getDate("CreatedOn").getTime()),

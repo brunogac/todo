@@ -74,7 +74,7 @@ public class Task {
         this.description = description;
     }
 
-    public boolean isIsComplete() {
+    public boolean getIsComplete() {
         return isComplete;
     }
 
