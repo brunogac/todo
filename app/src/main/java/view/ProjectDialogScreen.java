@@ -149,13 +149,20 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
     private void jLabelToolbarSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToolbarSaveMouseClicked
         // TODO add your handling code here:
         try {
-            Project project = new Project(jTextFieldName.getText(), jTextAreaDescription.getText());
-            controller.save(project);
+            if(!jTextFieldName.getText().equals("")){
+                Project project = new Project(jTextFieldName.getText(), jTextAreaDescription.getText());
+                controller.save(project);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Project name is mandatory.");
+            }
+            
+            
             
         } catch(Exception e) {
             JOptionPane.showMessageDialog(rootPane,e.getMessage());
         }
-        this.dispose();
+        
     }//GEN-LAST:event_jLabelToolbarSaveMouseClicked
 
     /**

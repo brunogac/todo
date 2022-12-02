@@ -8,6 +8,6 @@ package view;
  *
  * @author bruno
  */
-public class SimpleDateFOrmat {
+public class SimpleDateFormat {
     
 }

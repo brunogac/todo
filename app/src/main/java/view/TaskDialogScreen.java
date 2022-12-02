@@ -21,7 +21,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
      */
     TaskController controller;
     Project project;
-    
+
     public TaskDialogScreen(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -111,7 +111,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
         jScrollPaneNotes.setViewportView(jTextAreaNotes);
 
         jLabelDeadline.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelDeadline.setText("Deadline");
+        jLabelDeadline.setText("Deadline*");
 
         jFormattedTextFieldDeadline.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
@@ -164,25 +164,29 @@ public class TaskDialogScreen extends javax.swing.JDialog {
 
     private void jLabelSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSaveMouseClicked
         // TODO add your handling code here:
-       
+
         try {
-            
-            
-            
-            Task task = new Task(
-                    project.getId(),
-                    jTextFieldName.getText(),
-                    jTextAreaDescription.getText(),
-                    false,
-                    jTextAreaNotes.getText(),
-                    new SimpleDateFormat("dd/MM/yyyy").parse(jFormattedTextFieldDeadline.getText())
-            );
-            controller.save(task);
+
+            if (jTextFieldName.getText().isEmpty() || jFormattedTextFieldDeadline.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "Task missing mandatory info. ");
+            } else {
+                Task task = new Task(
+                        project.getId(),
+                        jTextFieldName.getText(),
+                        jTextAreaDescription.getText(),
+                        false,
+                        jTextAreaNotes.getText(),
+                        new SimpleDateFormat("dd/MM/yyyy")
+                                .parse(jFormattedTextFieldDeadline.getText()));
+                controller.save(task);
+                this.dispose();
+            }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
 
-        this.dispose();
+
     }//GEN-LAST:event_jLabelSaveMouseClicked
 
     /**
@@ -242,7 +246,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextAreaNotes;
     private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
-    public void setProject(Project project){
+    public void setProject(Project project) {
         this.project = project;
     }
 }

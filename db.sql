@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     idProject INT NOT NULL,
     name VARCHAR(50) NOT NULL,
     description VARCHAR(255),
-    isComplete BOOLEAN NOT NULL,  
+    complete BOOLEAN NOT NULL,  
     notes VARCHAR(255),
     dueDate DATE,
     createdOn DATETIME NOT NULL,

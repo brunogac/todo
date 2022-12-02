@@ -4,10 +4,12 @@
  */
 package main;
 
+import view.MainScreen;
+
 /**
  *
  * @author bruno
  */
 public class Main {
-    
+    MainScreen mainScreen = new MainScreen();
 }
