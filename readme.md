@@ -19,7 +19,7 @@ The current state already fullfils all the project requirements. However, that a
 - [ ] Delete Projects
 - [ ] ...
 
-## 💻 Pré-requisitos
+## 💻 Requirements
 
 Before stating, make sure your system fulfill the following requirements:
 
